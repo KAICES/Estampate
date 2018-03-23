@@ -14,7 +14,12 @@
     <body>
         <form action='VentasServlet'method='post'>
             <input type='submit' value='Reporte Ventas'/>
-      <br><br>       
+        </form>
+        <br><br> 
+        <form action='EstampasPropioServlet'method='post'>
+            <input type='submit' value='Catalogo propio'/>
+         </form>   
+        <br><br>       
         <form action='index'method='post'>
             <input type='submit' value='volver'/>
         </form>

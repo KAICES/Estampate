@@ -12,16 +12,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action='UsuarioServlet'method='post'>
-            <input type='submit' value='Usuarios'/>
-        </form>
         
-        <form action='EstampaServlet'method='post'>
-            <input type='submit' value='Estampas'/>
+        <form action='Front-EndCompras'method='post'>
+            <input type='submit' value='Clientes del portal'/>
         </form>
         
         <form action='Front-EndArtistas.jsp'method='post'>
             <input type='submit' value='Ingreso para Artistas'/>
+        </form>
+        
+        <form action='Back-End.jsp'method='post'>
+            <input type='submit' value='Administrador'/>
         </form>
         
         

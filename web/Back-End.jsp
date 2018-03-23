@@ -13,7 +13,11 @@
     </head>
     <body>
         <form action='VentasServlet'method='post'>
-            <input type='submit' value=''/>
+            <input type='submit' value='Reporte general de ventas'/>
+        </form>
+        
+        <form action='UsuarioServlet'method='post'>
+            <input type='submit' value='Reporte usuarios'/>
         </form>
         
    

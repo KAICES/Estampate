@@ -12,6 +12,10 @@
         <servlet-name>VentasServlet</servlet-name>
         <servlet-class>co.edu.uniminuto.arqSw.proyectoEstampas.servlets.VentasServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EstampasPropioServlet</servlet-name>
+        <servlet-class>co.edu.uniminuto.arqSw.proyectoEstampas.servlets.EstampasPropioServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServlet</servlet-name>
         <url-pattern>/UsuarioServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>VentasServlet</servlet-name>
         <url-pattern>/VentasServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EstampasPropioServlet</servlet-name>
+        <url-pattern>/EstampasPropioServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
