@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/03/2018 11:33:32 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.FacturaVenta" table="factura_venta" catalog="portalestampas">
+        <composite-id name="id" class="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.FacturaVentaId">
+            <key-property name="idFacturaVenta" type="int">
+                <column name="idFactura_Venta" />
+            </key-property>
+            <key-property name="usuarioIdUsuario" type="int">
+                <column name="Usuario_idUsuario" />
+            </key-property>
+            <key-property name="camisetasIdCamisetas" type="int">
+                <column name="Camisetas_idCamisetas" />
+            </key-property>
+            <key-property name="estampasIdEstampas" type="int">
+                <column name="Estampas_idEstampas" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="usuario" class="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Usuario" update="false" insert="false" fetch="select">
+            <column name="Usuario_idUsuario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="camisetas" class="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Camisetas" update="false" insert="false" fetch="select">
+            <column name="Camisetas_idCamisetas" not-null="true" />
+        </many-to-one>
+        <many-to-one name="estampas" class="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Estampas" update="false" insert="false" fetch="select">
+            <column name="Estampas_idEstampas" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="string">
+            <column name="fecha" length="45" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="45" />
+        </property>
+        <property name="cantidad" type="java.lang.Integer">
+            <column name="cantidad" />
+        </property>
+        <property name="formaPago" type="string">
+            <column name="formaPago" length="45" />
+        </property>
+        <property name="valorArtista" type="java.lang.Integer">
+            <column name="valorArtista" />
+        </property>
+        <property name="valorEmpresa" type="java.lang.Integer">
+            <column name="valorEmpresa" />
+        </property>
+        <property name="valorAdicionalTexto" type="java.lang.Integer">
+            <column name="ValorAdicionalTexto" />
+        </property>
+        <property name="valorNeto" type="java.lang.Integer">
+            <column name="valorNeto" />
+        </property>
+        <property name="valorTotal" type="java.lang.Integer">
+            <column name="valorTotal" />
+        </property>
+    </class>
+</hibernate-mapping>

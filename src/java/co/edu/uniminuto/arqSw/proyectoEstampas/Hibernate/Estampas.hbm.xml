@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/03/2018 11:33:32 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Estampas" table="estampas" catalog="portalestampas">
+        <id name="idEstampas" type="int">
+            <column name="idEstampas" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreEstampa" type="string">
+            <column name="nombreEstampa" length="45" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="45" />
+        </property>
+        <property name="tamanio" type="string">
+            <column name="tamanio" length="45" />
+        </property>
+        <property name="precio" type="java.lang.Integer">
+            <column name="precio" />
+        </property>
+        <property name="ubicacion" type="string">
+            <column name="ubicacion" length="45" />
+        </property>
+        <property name="autor" type="string">
+            <column name="autor" length="45" />
+        </property>
+        <property name="rating" type="java.lang.Integer">
+            <column name="rating" />
+        </property>
+        <property name="popularidad" type="java.lang.Integer">
+            <column name="popularidad" />
+        </property>
+        <property name="textoEstampa" type="string">
+            <column name="textoEstampa" length="45" />
+        </property>
+        <set name="facturaVentas" table="factura_venta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Estampas_idEstampas" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.FacturaVenta" />
+        </set>
+    </class>
+</hibernate-mapping>

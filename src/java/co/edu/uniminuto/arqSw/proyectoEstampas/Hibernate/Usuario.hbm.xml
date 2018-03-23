@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/03/2018 11:33:32 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Usuario" table="usuario" catalog="portalestampas">
+        <id name="idUsuario" type="int">
+            <column name="idUsuario" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" />
+        </property>
+        <property name="tipoUsuario" type="string">
+            <column name="tipoUsuario" length="45" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="45" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="45" />
+        </property>
+        <set name="facturaVentas" table="factura_venta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Usuario_idUsuario" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.FacturaVenta" />
+        </set>
+    </class>
+</hibernate-mapping>
