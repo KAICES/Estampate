@@ -15,5 +15,12 @@
         <form action='UsuarioServlet'method='post'>
             <input type='submit' value='Usuarios'/>
         </form>
+        
+        <form action='EstampaServlet'method='post'>
+            <input type='submit' value='Estampas'/>
+        </form>
+        
+        
+        
     </body>
 </html>
