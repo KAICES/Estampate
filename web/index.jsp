@@ -20,6 +20,10 @@
             <input type='submit' value='Estampas'/>
         </form>
         
+        <form action='Front-EndArtistas.jsp'method='post'>
+            <input type='submit' value='Ingreso para Artistas'/>
+        </form>
+        
         
         
     </body>

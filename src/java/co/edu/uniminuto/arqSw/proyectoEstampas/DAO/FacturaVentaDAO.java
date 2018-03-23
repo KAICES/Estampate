@@ -6,8 +6,9 @@
 
 package co.edu.uniminuto.arqSw.proyectoEstampas.DAO;
 
+import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Camisetas;
+import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.FacturaVenta;
 import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.HibernateUtil;
-import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
@@ -18,31 +19,30 @@ import org.hibernate.Transaction;
  *
  * @author TIC-SCI
  */
-public class VentasDAO {
+public class FacturaVentaDAO {
+ 
+            Session session = null; 
     
-       Session session = null; 
-    
-    public VentasDAO() { 
+    public FacturaVentaDAO() { 
         
         this.session = HibernateUtil.getSessionFactory().getCurrentSession(); 
     }
     
-    
-    public List<Usuario> getVentas(){ 
+    public List<FacturaVenta> getFacturaVenta(){ 
         
-        List<Usuario> misVentas=new ArrayList<Usuario>(); 
+        List<FacturaVenta> misFacturaVenta=new ArrayList<FacturaVenta>(); 
         
             try{ 
                 
                 Transaction tx = session.beginTransaction(); 
                 Query q= session.createQuery("from factura_venta"); 
-                misVentas = (List<Usuario>)q.list(); 
+                misFacturaVenta = (List<FacturaVenta>)q.list(); 
                 
-            }catch(Exception e){ 
-                e.printStackTrace(); 
-            }
+    }catch(Exception e){ 
+        e.printStackTrace(); 
+    }
             
-                return misVentas; 
+        return misFacturaVenta; 
     }
     
     
