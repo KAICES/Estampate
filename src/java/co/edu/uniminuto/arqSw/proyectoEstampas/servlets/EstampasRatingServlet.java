@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author TIC-SCI
  */
-public class EstampasPropioServlet extends HttpServlet {
+public class EstampasRatingServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,17 +32,13 @@ public class EstampasPropioServlet extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     *  
      */
     
     private NombreArtistasVO miArtista;
-    
+
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
         
         EstampasDAO miDAO= new EstampasDAO();
 
@@ -50,9 +46,9 @@ public class EstampasPropioServlet extends HttpServlet {
         misE =miDAO.getEstampas();
         
         
+        
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
          try {
             String nomArt = miArtista.getNomArtista();
             out.println("<!DOCTYPE html>");
@@ -63,12 +59,12 @@ public class EstampasPropioServlet extends HttpServlet {
             out.println("<body>");
             int conteo = 0;
             out.println("<table class='egt' border ='1'>");
-            out.println("<h1>CATALOGO DE ESTAMPAS HECHOS POR "+nomArt+"</h1><br><br>");             
-            out.println("<tr><td>Tema</td><td>Ubicacion</td><td>Rating</td><td>Popularidad</td><td>precio</td></tr>");
+            out.println("<h1>REGISTRO DE RATING DE ESTAMPAS HECHOS POR "+nomArt+"</h1><br><br>");             
+            out.println("<tr><td>Tema</td><td>Rating</td><td>precio</td></tr>");
             for(Estampas e:misE){
                  
                    if(e.getAutor().equals(nomArt))      
-                    out.println("<tr><td>"+e.getNombreEstampa()+"</td><td>"+e.getUbicacion()+"</td><td>"+e.getRating()+" unds</td><td>"+e.getPopularidad()+" pts</td><td>$ "+e.getPrecio()+"</td></tr>");     
+                    out.println("<tr><td>"+e.getNombreEstampa()+"</td><td>"+e.getRating()+" unds</td><td> $ "+e.getPrecio()+"</td></tr>");     
    
             }  
             
@@ -77,10 +73,9 @@ public class EstampasPropioServlet extends HttpServlet {
             out.println("</form>");
             out.println("</body>");
             out.println("</html>");
-        } finally {
-            out.close();
-        }
-        
+            } finally {
+                out.close();
+            }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -110,13 +105,19 @@ public class EstampasPropioServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+                
         String nomArtista  = request.getParameter("Artistas");
         
         miArtista =new NombreArtistasVO (nomArtista);
         
         
         processRequest(request, response);
-    }  
+        
+        
+        
+        processRequest(request, response);
+    }
+
     /**
      * Returns a short description of the servlet.
      *
