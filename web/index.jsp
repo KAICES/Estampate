@@ -13,7 +13,7 @@
     </head>
     <body>
         
-        <form action='Front-EndCompras'method='post'>
+        <form action='Front-EndCompras.jsp'method='post'>
             <input type='submit' value='Clientes del portal'/>
         </form>
         

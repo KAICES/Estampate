@@ -18,7 +18,6 @@
             <OPTION >Seleccionar</OPTION>
             <OPTION value="Deming">Deming</OPTION>
             <OPTION value="Morgan">Morgan</OPTION>
-            <OPTION value="Davincho">Davincho</OPTION>
             <OPTION value="Darwing">Darwing</OPTION> 
         </SELECT>  
             
@@ -30,19 +29,28 @@
             <OPTION >Seleccionar</OPTION>
             <OPTION value="Deming">Deming</OPTION>
             <OPTION value="Morgan">Morgan</OPTION>
-            <OPTION value="Davincho">Davincho</OPTION>
             <OPTION value="Darwing">Darwing</OPTION> 
         </SELECT>  
             
         <input type='submit' value='Registro Rating'/>
 
-         </form>  
+         </form>      
+        
+                 </form>  
+      <form action='VentasArtistaServlet'method='post'>
+         <SELECT name="Artistas"  > 
+
+            <OPTION >Seleccionar</OPTION>
+            <OPTION value="Deming">Deming</OPTION>
+            <OPTION value="Morgan">Morgan</OPTION>
+            <OPTION value="Darwing">Darwing</OPTION> 
+        </SELECT>  
+            
+        <input type='submit' value='Reporte de utilidades'/>
         
         
-    
+        <br><br>        
         
-        
-        <br><br> 
         
         
         

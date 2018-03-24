@@ -35,7 +35,7 @@ public class FacturaVentaDAO {
             try{ 
                 
                 Transaction tx = session.beginTransaction(); 
-                Query q= session.createQuery("from factura_venta"); 
+                Query q= session.createQuery("from FacturaVenta"); 
                 misFacturaVenta = (List<FacturaVenta>)q.list(); 
                 
     }catch(Exception e){ 

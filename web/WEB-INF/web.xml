@@ -20,6 +20,10 @@
         <servlet-name>EstampasRatingServlet</servlet-name>
         <servlet-class>co.edu.uniminuto.arqSw.proyectoEstampas.servlets.EstampasRatingServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VentasArtistaServlet</servlet-name>
+        <servlet-class>co.edu.uniminuto.arqSw.proyectoEstampas.servlets.VentasArtistaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServlet</servlet-name>
         <url-pattern>/UsuarioServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>EstampasRatingServlet</servlet-name>
         <url-pattern>/EstampasRatingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VentasArtistaServlet</servlet-name>
+        <url-pattern>/VentasArtistaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

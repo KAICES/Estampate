@@ -6,8 +6,14 @@
 
 package co.edu.uniminuto.arqSw.proyectoEstampas.servlets;
 
+import co.edu.uniminuto.arqSw.proyectoEstampas.DAO.CamisetasDAO;
 import co.edu.uniminuto.arqSw.proyectoEstampas.DAO.EstampasDAO;
+import co.edu.uniminuto.arqSw.proyectoEstampas.DAO.FacturaVentaDAO;
+import co.edu.uniminuto.arqSw.proyectoEstampas.DAO.UsuarioDAO;
+import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Camisetas;
 import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Estampas;
+import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.FacturaVenta;
+import co.edu.uniminuto.arqSw.proyectoEstampas.Hibernate.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -21,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author TIC-SCI
  */
-public class EstampaServlet extends HttpServlet {
+public class VentasArtistaServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,29 +41,49 @@ public class EstampaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+//        UsuarioDAO miDAO= new UsuarioDAO();
+//        CamisetasDAO miDAOC = new CamisetasDAO();
+        FacturaVentaDAO miDAOF = new FacturaVentaDAO();
+       EstampasDAO miDAOE = new EstampasDAO();
         
-        EstampasDAO miDAO= new EstampasDAO();
-        List<Estampas> misE = new ArrayList<Estampas>();
-        misE =miDAO.getEstampas(); 
+//        List<Usuario> misV = new ArrayList<Usuario>();
+//        List<Camisetas> misC = new ArrayList<Camisetas>();
+        List<FacturaVenta> misF = new ArrayList<FacturaVenta>();
+       List<Estampas> misES = new ArrayList<Estampas>();
+        
+//        misV =miDAO.getUsuarios();
+//        misC =miDAOC.getCamisetas();
+        misF =miDAOF.getFacturaVenta();
+       misES= miDAOE.getEstampas();
+        
+        
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        try {
+try {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>CATALOGO ESTAMPAS</title>");            
+            out.println("<title>REPORTE VENTAS</title>");            
             out.println("</head>");
             out.println("<body>");
             int conteo = 0;
             out.println("<table class='egt' border ='1'>");
-            out.println("<h1>CATALOGO DE ESTAMPAS EXISTENTES</h1><br><br>");             
-            out.println("<tr><td>Tema</td><td>Rating</td><td>Popularidad</td><td>Autor</td></td><td>Precio</td></tr>");
-            for(Estampas e:misE){
-                         
-              out.println("<tr><td>"+e.getNombreEstampa()+"</td><td>"+e.getRating()+" unds</td><td>"+e.getPopularidad()+" pts</td><td>"+e.getAutor()+"</td><td>"+e.getPrecio()+"</td></tr>");     
+            out.println("<h1>REPORTE GENERAL DE VENTAS DE </h1><br><br>");             
+            out.println("<tr><td>Usuario</td><td>Clasificacion camiseta</td><td>Valor Artista</td><td>Valor Total</td><td>Estampa</td></tr>");
+             for(Estampas es:misES){
+            for(FacturaVenta f:misF){            
+                    
+                
+
+                                  
+              out.println("<tr><td>"+f.getValorArtista()+"</td><td></td></tr>");     
+             
+                }
+ 
             }  
+    
+              
             
             out.println("<form action='index.jsp' method='post'>");            
             out.println(" <input type='submit' value='volver'/>");            
